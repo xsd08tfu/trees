@@ -90,8 +90,8 @@ function plantqtoggle() {
 }
 
 function plantshow() {
-	$('#questioncontainer').slideUp();
-	$('#treecontainer').slideDown();
+	$('#questioncontainer').slideDown();
+	$('#treecontainer').slideUp();
 }
 
 function menu(){

@@ -55,6 +55,10 @@ li.menu {
 	
 }
 
+#glossary{
+	margin-top:5px;
+}
+
 #glossaryitems{
 	padding:5px;
 }
@@ -77,7 +81,7 @@ li.menu {
 }
 
 #questionfamily{
-	font-size:1.2em;
+	font-size:1.5em;
 	font-weight:normal;
 	text-align:center;
 	margin:5px 0;
@@ -86,7 +90,7 @@ li.menu {
 #plantName {
 	font-size:1.5em;
 	font-weight:normal;
-	margin:3px;
+	margin:5px;
 	text-align:center;
 }
 
@@ -121,7 +125,7 @@ blockquote {
 	font-style:italic;
 	display:block;
 	margin:7px 0;
-	color:#FFF;
+	color:#fbf8f5; 
 }
 
 .quoted {
