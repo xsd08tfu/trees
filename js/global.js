@@ -5,21 +5,9 @@ var key = "";
 var previousquestions = "";
 var questionsarray = [];
 
-$(document).ready(
-	function(){
-		getHash();
-		goToPage(hash);
-	}
-)
-
-function getHash() {
-	hash = window.location.hash;
-	hash = hash.substring(2);
-}
-
 function goToPage(pageName){
-	$.get('ajax/'+pageName.split("/",1)+'.html', function (data) {
-		$("#container").html(data);		
+	$.get('ajax/'+pageName+'.html', function (data) {
+		$("#container").html(data);	
 	});
 };
 
@@ -27,7 +15,7 @@ function q(qnum){
 	jQuery.getJSON('questions.json', function (data) {
 		$.each(data, function(){
        		if(qnum==this.questionID){
-          		matchedQuestion = this;  // If time matches, set a variable to this object
+          		matchedQuestion = this;  // If matches, set a variable to this object
           		return false; // break the loop
        		}
 		});
@@ -43,23 +31,16 @@ function q(qnum){
 			i++;
 		};
 	})
+	previousup();
 };
-
+var order = 0
 function addhistory(qfrom,answer){
-	$('#previousQ').append("<div id=\""+qfrom+"\">"+answer+"<a href=\"javascript:returnq("+qfrom+");\">Return to Question</a></div>");
+	order++;
+	$('#previousitems').append("<div id=\""+order+"\" class=\"previous\"><a href=\"javascript:returnq("+qfrom+","+order+");\">"+answer+"</a></div>");
 	questionsarray.push(qfrom);
 }
 
 function k(knum){
-	previousquestions = $('#previousQ').html()
-	$.get('ajax/tree.html', function (data) {
-		$("#container").html(data);
-		loadk(knum);	
-	});
-};
-
-function loadk(knum){
-	$('#previousQ').html(previousquestions)
 	jQuery.getJSON('key.json', function (data) {
 		$.each(data, function(){
 			if(knum==this.keyID){
@@ -67,12 +48,13 @@ function loadk(knum){
 				return false; // break the loop
 			}
 		});
-		$('#plantName').html(matchedPlant.commonName+" - "+matchedPlant.structure.genus+" "+matchedPlant.structure.species);
-		$('#fullstructure').html(matchedPlant.structure.group+" > "+matchedPlant.structure.family+" > "+matchedPlant.structure.genus+" > <span class=\"italics\">"+matchedPlant.structure.genus.substr(0,1)+".&nbsp;"+matchedPlant.structure.species)+"</span>";
+		$('#plantName').html(matchedPlant.commonName+" - <span class=\"italics\">"+matchedPlant.structure.genus+"&nbsp;"+matchedPlant.structure.species)+"</span>";
+		$('#fullstructure').html(matchedPlant.structure.group+"&nbsp;> "+matchedPlant.structure.family+"&nbsp;> "+matchedPlant.structure.genus+"&nbsp;> <span class=\"italics\">"+matchedPlant.structure.genus.substr(0,1)+".&nbsp;"+matchedPlant.structure.species)+"</span>";
 		$('#description').html(matchedPlant.description);
 		$('#picture').html("<img src=\"plantimages/"+matchedPlant.photos.photo1+"\"/>");
-		window.location.hash = "/tree/"+matchedPlant.keyID+"/"+matchedPlant.structure.genus+"-"+matchedPlant.structure.species;
+		plantqtoggle();
 	})		
+	previousup();
 }
 
 function g(gnum) {
@@ -87,24 +69,29 @@ function g(gnum) {
 	})
 }
 
-function returnq(qnum){
-	getHash();
-	hashsplit = hash.split("/")
-	previousquestions = $('#previousQ').html()
-	if(hashsplit[0]==="tree"){
-		$.get('ajax/key.html', function (data) {
-			$("#container").html(data);
-			$('#previousQ').html(previousquestions)	
-		});
-	}
-	var i = 0;
-	while(i<questionsarray.length){
-		if(questionsarray[i]>=qnum){
-			$('#'+questionsarray[i]).remove();
+function removehistory(num){
+	$('.previous').each(function(){
+		if($(this).attr('id')>=num){
+			$(this).html('');
 		}
-		i++;
-	}
+	});
+};
+
+function returnq(qnum,num){
 	q(qnum);
+	removehistory(num);
+	plantshow();
+	previousup();
+}
+
+function plantqtoggle() {
+	$('#questioncontainer').slideToggle();
+	$('#treecontainer').slideToggle();
+}
+
+function plantqtoggle() {
+	$('#questioncontainer').slideUp();
+	$('#treecontainer').slideDown();
 }
 
 function menu(){
@@ -127,16 +114,34 @@ function glossaryup(){
 	$('#glossaryitems').slideUp('slow');
 }
 
+function previoustoggle(){
+	$('#previoustitle').slideToggle('slow');
+	$('#previousitems').slideToggle('slow');
+}
+
+function previousup(){
+	$('#previoustitle').slideUp('slow');
+	$('#previousitems').slideUp('slow');
+}
+
 function capitaliseFirstLetter(string)
 {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-$(window).bind('hashchange', function() {
-	var hashsplit = hash.split("/");
-	var currentsplit = window.location.hash.split("/");
-	if(hashsplit[0]!==currentsplit[1]){
-		getHash();
-		goToPage(currentsplit[1]);
+function setWidth() {
+	var w = $(window).width();
+	if(w>766){
+		goToPage('introduction');
+		menudn();
 	}
-});
+}
+
+function widescreen() {
+	var w = $(window).width();
+	if(w>766){
+		menudn();
+	} else {
+		menuup();
+	}
+}

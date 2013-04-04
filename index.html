@@ -1,35 +1,44 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" manifest="cache.manifest.php">
+<html xmlns="http://www.w3.org/1999/xhtml" >
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Trees of the British Isles</title>
-<script src="jquery-1.8.3.js" type="text/javascript"></script>
-<script src="global.js" type="text/javascript"></script>
-<link href="style.css" rel="stylesheet" type="text/css" />
-<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,maximum-scale=1" />
-<meta name="apple-mobile-web-app-capable" content="yes" />
-
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+	
+	<!--[if lte IE 9]><link rel="stylesheet" href="css/ie.css" type="text/css" media="screen" /><![endif]-->
+	<link rel="stylesheet" href="css/1140.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+	
+	<!--css3-mediaqueries-js - http://code.google.com/p/css3-mediaqueries-js/ - Enables media queries in some unsupported browsers-->
+	<script type="text/javascript" src="js/css3-mediaqueries.js"></script>
+    <title>Trees of the British Isles</title>
+    <script src="js/jquery-1.8.3.js" type="text/javascript"></script>
+    <script src="js/global.js" type="text/javascript"></script>
 </head>
 
 <body>
-<div id="centre">
-    <div id="head">
-        Trees of the British Isles
-    </div>
-    <div id="menu">
-        <div id="menuitems">
-            <a href="javascript:goToPage('introduction');" class="button">Introduction</a>
-            <a href="javascript:goToPage('howto');" class="button">How to use this key</a>
-            <a href="javascript:goToPage('key');" class="button">Start key</a>
+<div id="centre" class="container">
+    <div class="row">
+        <div id="head" class="twelvecol">
+            Trees of the British Isles
         </div>
-        <a href="javascript:menu();" class="menuhider">Menu</a>
     </div>
-    <div id="container">
+    <div class="row">
+   		<div id="menu" class="fourcol">
+        	<div id="menuitems">
+            	<a href="javascript:goToPage('home');" class="button">Home</a>
+         	  	 <a href="javascript:goToPage('introduction');" class="button">Introduction</a>
+          		 <a href="javascript:goToPage('howto');" class="button">How to use this key</a>
+          	  	<a href="javascript:goToPage('key');" class="button">Start key</a>
+        	</div>
+        	<a href="javascript:menu();" class="menuhider">Menu</a>
+    	</div>
+    <div id="container" class="eightcol last">
         
     </div>
 </div>
 </body>
 <script>
-
+setWidth();
 </script>
 </html>

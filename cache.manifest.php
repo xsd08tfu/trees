@@ -7,7 +7,7 @@
 	
 	function printFiles( $path = '.', $level = 0 ){ 
 		global $hashes;
-	    $ignore = array('.', '..','.htaccess');  
+	    $ignore = array('.', '..','.htaccess','error_log','readme.md','/.git/');  
 
 	    $dh = @opendir( $path ); 
 
