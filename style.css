@@ -1,0 +1,106 @@
+body {
+	font-family:Arial, Helvetica, sans-serif;
+	color:#000;
+	margin:0;
+	padding:0;
+}
+
+a {
+	text-decoration:none;
+	color:#000;
+}
+
+a.button {
+	background-color:#eee;
+	border:#999 thin solid;
+	border-radius:10px;
+	margin:4px;
+	padding:5px;
+	display:block;
+	font-weight:bold;
+}
+
+#centre {
+	background-color:#F5F5F5;
+	border-left:medium #F5F5F5 solid;
+	border-right:medium #F5F5F5 solid;
+	padding:0px;
+	margin: 0 auto;
+	text-align:center;
+	max-width:500px;
+}
+
+#head{
+	font-weight:bold;
+	color:#FFF;
+	background:#333;
+	padding:10px;
+	font-size:1.5em;
+}
+
+.menuhider{
+	display:block;
+	color:#FFF;
+	padding:5px;
+	background-color:#666;
+}
+
+ul.menu {
+	padding:0;
+	margin:5px;
+}
+
+li.menu {
+	list-style:none;
+	padding:5px;
+	background-color:#eee;
+	border:#999 thin solid;
+	border-radius:10px;
+	margin:2px;
+}
+
+#container {
+	padding:5px;
+	overflow:scroll;
+	overflow-x:hidden;
+	max-height:400px;
+}
+
+#glossaryitems{
+	padding:5px;
+	display:none;
+}
+
+#glossaryentry{
+	
+}
+
+#previousQ {
+	display:none;
+}
+
+#questionfamily{
+	font-size:1.2em;
+	font-weight:normal;
+}
+
+#plantName {
+	font-size:1.2em;
+	font-weight:normal;
+	margin:3px;
+}
+
+#fullstructure{
+	
+}
+
+#picture {
+	padding:5px;
+}
+.bold {
+	font-weight:bold;
+}
+
+.italics {
+	font-style:italic;
+}

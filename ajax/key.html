@@ -1,0 +1,35 @@
+<div id="questioncontainer">
+	<div id="previousQ">
+    	Previous Questions
+    </div>
+	<div id="questions">
+        <div id="questionfamily">
+            Key to Families
+        </div>
+        <div id="answers">
+            <span id="answerA">
+                Like a Tree
+            </span>
+            <span id="answerB">
+                Like a Plant
+            </span>
+        </div>
+    </div>
+    <div id="glossary">
+    	<div id="glossaryitems">
+    	Glossary
+        </div>
+        <a href="javascript:glossarytoggle();" class="menuhider">Glossary</a>
+    </div>    
+</div>
+<script>
+	getHash();
+	var hashsplit = hash.split("/")
+	if(typeof hashsplit[1] !== 'undefined'){
+		k(hashsplit[1])
+	} else {
+		q(1)
+		window.location.hash="/key";
+	}
+	menuup();
+</script>

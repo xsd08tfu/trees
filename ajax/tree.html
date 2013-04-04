@@ -1,0 +1,27 @@
+<div id="treecontainer">
+	<div id="previousQ">
+    	Previous Questions
+    </div>
+    <div id="result">
+    	<div id="plantName">
+            Plant Name
+        </div>
+        <div id="fullstructure">
+        </div>
+        <div id="picture">
+        </div>
+        <div id="description">
+        </div>
+    </div>    
+</div>
+<script>
+	getHash();
+	var hashsplit = hash.split("/")
+	if(typeof hashsplit[1] !== 'undefined'){
+		loadk(hashsplit[1])
+	} else {
+		q(1)
+		goToPage('key');
+	}
+	menuup();
+</script>
