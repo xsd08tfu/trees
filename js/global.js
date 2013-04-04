@@ -89,7 +89,7 @@ function plantqtoggle() {
 	$('#treecontainer').slideToggle();
 }
 
-function plantqtoggle() {
+function plantshow() {
 	$('#questioncontainer').slideUp();
 	$('#treecontainer').slideDown();
 }
