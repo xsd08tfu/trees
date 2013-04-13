@@ -69,7 +69,7 @@
     "commonName":"White Birch",
     "description":"In woods in northern and central Europe, north Asia and north America. More limited to mountain districts in southern Europe. Extends over all of Britain. Confined to the northern hemisphere, not reaching the tropics. Flowers in spring before the leaves are fully out, male and female flowers on the same plant in the form of catkins.",
     "photos":{
-		"photo1":"Betula_pubescens .JPG",
+		"photo1":"Betula_pubescens.JPG",
 		"photo2":"Photo name"
     }
 },
@@ -588,7 +588,7 @@
     "structure": {
 		"group":"Angiosperms",
 		"family":"Rosaceae",
-		"genus":"Cotoneaser",
+		"genus":"Cotoneaster",
 		"species":"intergerrimus"
     },
     "commonName":"Common Cotoneaster",

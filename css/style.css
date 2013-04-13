@@ -18,6 +18,12 @@ a.button {
 	text-align:center;
 }
 
+.brown {
+	background-color:#C19A6B !important;
+	color:#FFF;
+	border-color:#80461B !important;
+}
+
 #centre {
 
 }
@@ -36,6 +42,7 @@ a.button {
 	padding:5px;
 	background-color:#666;
 	text-align:center;
+	margin: 5px 0;
 }
 
 ul.menu {
@@ -55,10 +62,6 @@ li.menu {
 	
 }
 
-#glossary{
-	margin-top:5px;
-}
-
 #glossaryitems{
 	padding:5px;
 }
@@ -74,10 +77,6 @@ li.menu {
 
 #previoustitle {
 	display:none;
-}
-
-#previousQ{
-	margin: 5px 0;
 }
 
 #questionfamily{
@@ -101,6 +100,12 @@ li.menu {
 #picture {
 	text-align:center;
 }
+
+#random {
+	text-align:center;
+	padding:5px;
+}
+
 .bold {
 	font-weight:bold;
 }
@@ -148,4 +153,38 @@ blockquote {
 .previous a {
 	text-decoration:underline;
 	font-style:italic;
+}
+
+.strike {
+	color:#999;
+	text-decoration:line-through;
+}
+
+.serif {
+	font-family:Georgia, "Times New Roman", Times, serif;
+}
+
+.success {
+	border: dotted thin #060;
+	background-color:#D7FFD7;
+	padding: 10px;
+	margin: 10px 0;
+}
+
+.failure {
+	border: dotted thin #F60;
+	background-color:#FFE1E1;
+	padding: 10px;
+	margin: 10px 0;
+}
+
+.infobox {
+	border: dotted thin #069;
+	background-color:#DFF3FF;
+	padding: 10px;
+	margin: 10px 0;
+}
+
+h2 {
+	font-weight:normal;
 }

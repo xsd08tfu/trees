@@ -4,6 +4,8 @@ var glossary = "";
 var key = "";
 var previousquestions = "";
 var questionsarray = [];
+var randomOn = 0;
+var ranKey = 0;
 
 function goToPage(pageName){
 	$.get('ajax/'+pageName+'.html', function (data) {
@@ -49,10 +51,21 @@ function k(knum){
 			}
 		});
 		$('#plantName').html(matchedPlant.commonName+" - <span class=\"italics\">"+matchedPlant.structure.genus+"&nbsp;"+matchedPlant.structure.species)+"</span>";
-		$('#fullstructure').html(matchedPlant.structure.group+"&nbsp;> "+matchedPlant.structure.family+"&nbsp;> "+matchedPlant.structure.genus+"&nbsp;> <span class=\"italics\">"+matchedPlant.structure.genus.substr(0,1)+".&nbsp;"+matchedPlant.structure.species)+"</span>";
+		$('#fullstructure').html(matchedPlant.structure.group+"&nbsp;> "+matchedPlant.structure.family+"&nbsp;> "+matchedPlant.structure.genus+"&nbsp;> <span class=\"italics\">"+matchedPlant.structure.genus.substr(0,1)+".&nbsp;"+matchedPlant.structure.species+"</span>");
 		$('#description').html(matchedPlant.description);
 		$('#picture').html("<img src=\"plantimages/"+matchedPlant.photos.photo1+"\"/>");
 		plantqtoggle();
+		if (randomOn==1){
+			if(ranKey==knum){
+				$('#huntresult').html('<div class="success"><h2 class="serif">Well done!</h2>Arrrgh! You found it!<br>Perhaps try another one? or Tweet your happiness? <a href="http://www.twitter.com/?status=I+just+found+'+matchedPlant.commonName+' - '+matchedPlant.structure.genus+'. '+matchedPlant.structure.species+'.+Have+a+go+yourself!+http://www.nardoo.co.uk/apps/trees"><img src="tweet.png" alt="Tweet!" target="blank"></a></div>');
+				randomOn = 0;
+				randomend();
+				$('#survey').html('<div class="infobox"><h2 class="serif">Please Help!</h2>Can you fill in this very short feedback questionnaire? Thank you!<br /><a href="javascript:goToPage(\'survey\');" class="button">Feedback Questionnaire</a></div>')
+			} else {
+				$('#huntresult').html('<div class="failure"><h2 class="serif">Bad luck!</h2>Perhaps use the Previous Questions section to go back?</div>');
+				$('#survey').html('');
+			}
+		}
 	})		
 	previousup();
 }
@@ -124,6 +137,29 @@ function previousup(){
 	$('#previousitems').slideUp('slow');
 }
 
+function randomtree(){
+	$('#random').slideToggle('slow');
+}
+
+function randomend(){
+	$('#randomstart').hide();
+}
+
+function randomstart(){
+	ranKey = Math.ceil(Math.random()*47);
+	jQuery.getJSON('key.json', function (data) {
+		$.each(data, function(){
+			if(ranKey==this.keyID){
+				matchedPlant = this;  // If time matches, set a variable to this object
+				return false; // break the loop
+			}
+		});
+		$('#random').html("<img src=\"plantimages/"+matchedPlant.photos.photo1+"\"/>");
+	})		
+	$('#randomstart').slideDown('slow');
+	randomOn=1;
+}
+
 function capitaliseFirstLetter(string)
 {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -134,6 +170,7 @@ function setWidth() {
 	if(w>766){
 		goToPage('introduction');
 		menudn();
+		$('#menuitems').append('<a href="javascript:goToPage(\'survey\');" class="button">Feedback Questionnaire</a>');
 	}
 }
 

@@ -578,7 +578,7 @@
     "family": "Salicaceae Fruiting",
     "answer": {
         "a": "Scales of the catkin entire, leaves on short, stiff stalks",
-        "b": "Scales of the catkin toothed, leaves on long stalks, very broad"
+        "b": "Scales of the catkin toothed, very broad leaves on long stalks"
     },
     "actions":{
             "a": "q(41)",
@@ -687,7 +687,7 @@
     },
     "actions":{
             "a": "k(18)",
-            "b": "(48)"
+            "b": "q(48)"
     },
     "glossary":[
             "44","89","114","178","179","242"
@@ -983,7 +983,7 @@
     },
     "actions":{
             "a": "k(32)",
-            "b": "k(31)"
+            "b": "k(34)"
     },
     "glossary":[
             "178"

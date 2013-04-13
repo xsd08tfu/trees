@@ -31,6 +31,6 @@ echo "#VersionHash: " . md5($hashes) . "\n";
 ?>
 
 NETWORK:
-
+*
 
 FALLBACK:
