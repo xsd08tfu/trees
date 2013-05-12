@@ -203,7 +203,7 @@
     "family": "Angiosperms",
     "answer": {
         "a": "Three distinct flowers, each with 4 stamens, under each scale of the male catkin. Female catkins small and ovoid",
-        "b": "6-12 within each scale, not in distinct flowers"
+        "b": "6-12 stamens within each scale, not in distinct flowers"
     },
     "actions":{
             "a": "k(4)",
@@ -1016,7 +1016,7 @@
             "b": "q(70)"
     },
     "glossary":[
-            "242","252"
+            "242","252","317"
     ]
 },
 {
