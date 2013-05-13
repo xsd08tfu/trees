@@ -57,7 +57,7 @@ function k(knum){
 		plantqtoggle();
 		if (randomOn==1){
 			if(ranKey==knum){
-				$('#huntresult').html('<div class="success"><h2 class="serif">Well done!</h2>Arrrgh! You found it!<br>Perhaps try another one? or Tweet your happiness? <a href="http://www.twitter.com/?status=I+just+found+'+matchedPlant.commonName+' - '+matchedPlant.structure.genus+'. '+matchedPlant.structure.species+'.+Have+a+go+yourself!+http://www.nardoo.co.uk/apps/trees"><img src="tweet.png" alt="Tweet!" target="blank"></a></div>');
+				$('#huntresult').html('<div class="success"><h2 class="serif">Well done!</h2>Arrrgh! You found it!<br>Perhaps try another one? or Tweet your happiness? <a href="http://www.twitter.com/?status=I+just+found+'+matchedPlant.commonName+' - '+matchedPlant.structure.genus+'. '+matchedPlant.structure.species+'.+Have+a+go+yourself!+http://goo.gl/vOhjG"><img src="tweet.png" alt="Tweet!" target="blank"></a></div>');
 				randomOn = 0;
 				randomend();
 				$('#survey').html('<div class="infobox"><h2 class="serif">Please Help!</h2>Can you fill in this very short feedback questionnaire? Thank you!<br /><a href="javascript:goToPage(\'survey\');" class="button">Feedback Questionnaire</a></div>')
