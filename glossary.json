@@ -286,7 +286,7 @@
 {		
 	"glossaryID":"58",
 	"word":"cordate",
-	"definition":"heart-shaped (as in a playing card or St Valentine’s Card), usually of the base of a leaf with two lobes"
+	"definition":"heart-shaped (as in a playing card or St Valentine&acute;s Card), usually of the base of a leaf with two lobes"
 },		
 {		
 	"glossaryID":"59",
@@ -301,7 +301,7 @@
 {		
 	"glossaryID":"61",
 	"word":"corymb",
-	"definition":"raceme with pedicels shortening towards the top so that all the flowers are more or less at the same level"
+	"definition":"an unbranched group of flowers with indiviual stems shortening towards the top so that all the flowers are more or less at the same level"
 },		
 {		
 	"glossaryID":"62",
@@ -1170,7 +1170,7 @@
 		
 	"glossaryID":"211",	
 	"word":"raceme",
-	"definition":"unbranched inflorescence with stalked flowers (cf. spike)"
+	"definition":"unbranched inflorescence (group of flowers) with stalked flowers (cf. spike)"
 },		
 {		
 		
@@ -1723,4 +1723,9 @@
 	"glossaryID":"317",
 	"word":"sepal",
 	"definition":"Each of the parts of the calyx of a flower, enclosing the petals and typically green and leaflike."
+},	
+{		
+	"glossaryID":"318",
+	"word":"catkin",
+	"definition":"A spike of unisex flowers within scales and lacking petals. Often drooping, dense and cylindrical."
 }]
