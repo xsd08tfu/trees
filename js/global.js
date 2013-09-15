@@ -1,4 +1,4 @@
-// JavaScript Document
+// JavaScript Document v2
 var questions = "";
 var glossary = "";
 var key = "";
